@@ -1,0 +1,34 @@
+# Arquivos gerados, dependências, uploads e segredos locais não entram no versionamento; uploads/.htaccess deve permanecer.
+node_modules/
+test-results/
+playwright-report/
+uploads/*
+!uploads/.htaccess
+*.log
+.env
+
+# Dependências e resultados gerados
+node_modules/
+test-results/
+playwright-report/
+__pycache__/
+*.pyc
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
+
+# Configurações privadas e bancos locais
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,20 @@
+{
+    "name": "loja-camile",
+    "version": "1.0.0",
+    "description": "Loja PHP e MySQL Use by Cami; Node é usado somente nos testes.",
+    "private": true,
+    "scripts": {
+        "test": "node tests/run.cjs",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "@playwright/test": "^1.63.0",
+        "@prettier/plugin-php": "0.25.0",
+        "prettier": "3.9.9"
+    }
+}

@@ -1,0 +1,9 @@
+# Pastas geradas, dependências, imagens e repositório antigo ficam fora da formatação automática.
+node_modules/
+test-results/
+playwright-report/
+uploads/
+assets/images/
+database/
+loja camile/
+package-lock.json

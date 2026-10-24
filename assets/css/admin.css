@@ -1,0 +1,608 @@
+/* Extensões do painel, carregadas depois de style.css em admin/index.php. Classes são usadas por admin.js, admin-orders.js e admin-accounts.js; tabelas têm rolagem interna em telas pequenas. */
+.admin-body {
+    background: #f7f3ee;
+}
+/* Login e primeiro acesso administrativo. */
+.auth-view {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 35px 20px;
+}
+.auth-view > a > img {
+    margin-bottom: 20px;
+}
+.auth-card {
+    background: #fffdfb;
+    border: 1px solid #e7dcd2;
+    padding: 35px;
+    width: 410px;
+    max-width: 100%;
+    box-shadow: 0 15px 55px #643a2110;
+}
+.auth-card h1 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+.auth-card p {
+    color: #8b7564;
+    font-size: 12px;
+}
+.auth-card form {
+    margin-top: 25px;
+}
+.auth-card .button {
+    width: 100%;
+}
+.back-link {
+    font-size: 11px;
+    color: #987b66;
+    margin-top: 25px;
+}
+/* Estrutura do painel com menu lateral e área de trabalho. */
+.admin-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    min-height: 100dvh;
+}
+.admin-sidebar {
+    padding: 30px 22px;
+    background: #f0e5da;
+    border-right: 1px solid #e3d5c7;
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+.admin-sidebar > a img {
+    margin: 0 auto 35px;
+}
+.sidebar-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #a1856e;
+    margin: 0 12px 15px;
+}
+.admin-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+}
+.admin-sidebar nav button {
+    background: none;
+    border: 0;
+    padding: 13px;
+    text-align: left;
+    font-size: 11px;
+    color: #8f715e;
+    border-radius: 3px;
+}
+.admin-sidebar nav button.selected {
+    background: #632b38;
+    color: #fff6ed;
+}
+.sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 12px 5px;
+}
+.sidebar-bottom a,
+.sidebar-bottom button {
+    font-size: 10px;
+    color: #8d6a55;
+    border: 0;
+    background: none;
+    text-align: left;
+    padding: 0;
+}
+.admin-main {
+    padding: 42px 4%;
+    min-width: 0;
+}
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+.admin-header h1 {
+    font-size: 33px;
+    margin: 9px 0;
+    color: #60343b;
+}
+.admin-date {
+    font-size: 10px;
+    color: #a18b77;
+}
+/* Indicadores da visão geral, calculados a partir do dashboard. */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+.stat {
+    padding: 24px;
+    background: #fffdfb;
+    border: 1px solid #e7dcd2;
+}
+.stat small {
+    font-size: 10px;
+    color: #9d826d;
+    display: block;
+}
+.stat strong {
+    display: block;
+    font: 32px Georgia;
+    color: #68303c;
+    margin: 10px 0 4px;
+}
+.stat span {
+    font-size: 9px;
+    color: #a68e7a;
+}
+/* Cartões/seções usados pelas abas administrativas. */
+.panel {
+    background: #fffdfb;
+    border: 1px solid #e7dcd2;
+    padding: 25px;
+    margin-bottom: 24px;
+}
+.panel h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.panel p {
+    font-size: 12px;
+    color: #917661;
+}
+.panel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.panel-top h2 {
+    margin: 0;
+}
+.panel-top input {
+    min-width: 150px;
+    width: 230px;
+    font-size: 11px;
+}
+/* Tabelas de pedidos, produtos, movimentos e contas, com rolagem horizontal interna. */
+.table-scroll {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 11px;
+}
+th {
+    font-weight: 400;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #ab8e78;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e8dccf;
+}
+td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #eee5dc;
+    color: #856953;
+    vertical-align: middle;
+}
+td strong {
+    font-weight: 500;
+    color: #4f3531;
+}
+td small {
+    display: block;
+    color: #ac8e77;
+    font-size: 9px;
+    margin-top: 4px;
+}
+.table-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 180px;
+}
+.table-product img {
+    height: 55px;
+    width: 43px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+.table-actions button,
+.link-button {
+    background: none;
+    border: 1px solid #d9c8b7;
+    padding: 6px 9px;
+    font-size: 9px;
+    white-space: nowrap;
+}
+/* Cores das etiquetas de etapa do pedido e visibilidade de produtos. */
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    font-size: 9px;
+    background: #f4e5c9;
+    color: #967144;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+.status.confirmed,
+.status.active {
+    background: #e8eee0;
+    color: #607049;
+}
+.status.shipped {
+    background: #e4eaf1;
+    color: #586f85;
+}
+.status.cancelled,
+.status.inactive {
+    background: #f2e1e1;
+    color: #a56969;
+}
+.status.low {
+    background: #f7e1ce;
+    color: #a67a51;
+}
+.empty-admin {
+    padding: 35px;
+    text-align: center;
+    color: #a2856f;
+    font-size: 12px;
+}
+.quick-start {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: #eee0d3;
+    border: 0;
+}
+.quick-start > span {
+    font: 40px Georgia;
+    color: #9a7152;
+}
+.quick-start h2 {
+    margin-bottom: 7px;
+}
+.quick-start p {
+    margin-bottom: 0;
+}
+.quick-start button {
+    margin-left: auto;
+    white-space: nowrap;
+}
+/* Editor reutilizado para peças, estoque, pedidos e contas. */
+.editor-dialog {
+    width: 720px;
+    padding: 35px;
+}
+.editor-dialog h2 {
+    font-size: 29px;
+    margin-bottom: 24px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+}
+.form-grid .full {
+    grid-column: 1/-1;
+}
+.check-field {
+    font-size: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 8px 0 18px;
+}
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+/* Prévia e seleção de imagem do produto antes/depois do envio. */
+.upload-preview {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.upload-preview img {
+    height: 90px;
+    width: 70px;
+    object-fit: cover;
+}
+.upload-preview input {
+    padding: 8px;
+    font-size: 10px;
+    max-width: 100%;
+}
+.upload-preview p {
+    font-size: 10px;
+    color: #9d816a;
+    margin: 7px 0;
+}
+/* Variações e formulário de movimentação do estoque. */
+.variant-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8dacc;
+    font-size: 12px;
+}
+.variant-row strong {
+    margin-left: auto;
+    color: #64323b;
+}
+.stock-form {
+    padding-top: 23px;
+}
+.settings-form {
+    max-width: 620px;
+}
+.settings-form .button {
+    margin-top: 10px;
+}
+.order-detail {
+    padding: 0 0 15px;
+}
+.order-detail dt {
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #aa8b75;
+    margin-top: 15px;
+}
+.order-detail dd {
+    margin: 4px 0;
+    font-size: 12px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.order-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.admin-feedback {
+    background: #f4e5ce;
+    padding: 14px 20px;
+    color: #876a4f;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+.low-stock {
+    color: #ac6554;
+}
+.movement-positive {
+    color: #617e50;
+}
+.movement-negative {
+    color: #a66363;
+}
+.intro-note {
+    font-size: 11px;
+    color: #9c826d;
+}
+.file-input-label {
+    display: block;
+    font-size: 11px;
+    color: #8c6f5b;
+    margin-bottom: 6px;
+}
+/* Seções de rastreio e vínculo com cliente adicionadas ao diálogo do pedido. */
+.order-extra {
+    border-top: 1px solid #e5d6c7;
+    margin-top: 25px;
+    padding-top: 22px;
+}
+.order-extra h3 {
+    font: 22px Georgia;
+    margin-bottom: 12px;
+}
+.status.delivered {
+    background: #e3eee3;
+    color: #537952;
+}
+/* Até 1000px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 1000px) {
+    .admin-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+    .admin-sidebar {
+        padding: 25px 14px;
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .admin-header h1 {
+        font-size: 28px;
+    }
+    .admin-date {
+        display: none;
+    }
+    .quick-start {
+        flex-wrap: wrap;
+    }
+    .quick-start button {
+        margin-left: 0;
+    }
+}
+/* Até 800px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 800px) {
+    .admin-sidebar nav {
+        position: static;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        flex-wrap: nowrap;
+    }
+    .admin-layout {
+        grid-template-columns: 165px minmax(0, 1fr);
+    }
+    .admin-sidebar {
+        padding: 20px 10px;
+    }
+    .admin-sidebar nav button {
+        font-size: 10px;
+        padding: 11px;
+    }
+    .sidebar-label {
+        font-size: 7px;
+    }
+    .admin-main {
+        padding: 30px 5%;
+    }
+    .panel {
+        padding: 20px;
+    }
+    .panel-top {
+        flex-wrap: wrap;
+    }
+    .panel-top input {
+        width: 100%;
+    }
+    .panel-top h2 {
+        font-size: 23px;
+    }
+}
+/* Até 600px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 600px) {
+    .admin-layout {
+        display: block;
+    }
+    .admin-sidebar {
+        position: relative;
+        height: auto;
+        padding: 10px 5% 14px;
+        border-bottom: 1px solid #e3d5c7;
+    }
+    .admin-sidebar > a img {
+        height: 68px;
+        width: 86px;
+        margin: 0 auto 10px;
+    }
+    .sidebar-label {
+        display: none;
+    }
+    .admin-sidebar nav {
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        gap: 7px;
+        white-space: nowrap;
+    }
+    .admin-sidebar nav button {
+        font-size: 9px;
+        padding: 10px;
+    }
+    .sidebar-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 15px 4px 0;
+    }
+    .sidebar-bottom a,
+    .sidebar-bottom button {
+        font-size: 9px;
+    }
+    .admin-main {
+        padding: 27px 5%;
+    }
+    .admin-header h1 {
+        font-size: 28px;
+    }
+    .stats {
+        gap: 12px;
+    }
+    .stat {
+        padding: 17px;
+    }
+    .stat strong {
+        font-size: 27px;
+    }
+    .stat small {
+        font-size: 9px;
+    }
+    .stat span {
+        font-size: 8px;
+    }
+    .panel {
+        padding: 18px;
+    }
+    .quick-start {
+        gap: 14px;
+    }
+    .quick-start h2 {
+        font-size: 23px;
+    }
+    .quick-start > span {
+        display: none;
+    }
+    .form-grid {
+        display: block;
+    }
+    .editor-dialog {
+        padding: 30px 23px;
+    }
+    .upload-preview {
+        align-items: flex-start;
+        gap: 13px;
+    }
+    .upload-preview > div {
+        min-width: 0;
+    }
+    .panel-top {
+        align-items: flex-start;
+    }
+    .table-actions {
+        flex-direction: column;
+    }
+    .auth-card {
+        padding: 28px;
+    }
+}
+
+/* Busca e paginação da aba Clientes. */
+.account-search {
+    display: flex;
+    gap: 16px;
+    align-items: end;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.account-search .form-field {
+    flex: 1;
+    min-width: 180px;
+    margin: 0;
+}
+.account-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}

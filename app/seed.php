@@ -1,0 +1,90 @@
+<?php
+/**
+ * Produtos de demonstração lidos por migrate() em bootstrap.php somente quando o catálogo está
+ * vazio. Cada entrada contém nome, categoria, descrição, preço/antes em centavos, imagem local,
+ * destaque e cor; migrate() cria tamanhos P/M/G.
+ * Mapa de navegação e manutenção: docs/guia-do-codigo.md.
+ */
+
+return [
+    [
+        'Vestido Aurora',
+        'Vestidos',
+        'Leveza e movimento para acompanhar seus melhores momentos. Produto demonstrativo: substitua a foto e a descrição pelas informações da peça real.',
+        18990,
+        22990,
+        'assets/images/dress.jpg',
+        1,
+        'Off-white',
+    ],
+    [
+        'Conjunto Serena',
+        'Conjuntos',
+        'Uma combinação versátil para dias cheios de possibilidades. Produto demonstrativo; imagem ilustrativa.',
+        24990,
+        0,
+        'assets/images/set-demo.png',
+        1,
+        'Areia',
+    ],
+    [
+        'Vestido Essência',
+        'Vestidos',
+        'Um clássico para se sentir linda do seu jeito. Produto demonstrativo; imagem ilustrativa.',
+        21990,
+        25990,
+        'assets/images/black-demo.png',
+        1,
+        'Preto',
+    ],
+    [
+        'Blusa Alma',
+        'Blusas',
+        'Delicadeza nos detalhes, conforto em cada escolha. Produto demonstrativo; imagem ilustrativa.',
+        9990,
+        0,
+        'assets/images/top-demo.png',
+        1,
+        'Off-white',
+    ],
+    [
+        'Vestido Brisa',
+        'Vestidos',
+        'Seu próximo favorito para aproveitar os dias de sol. Produto demonstrativo; imagem ilustrativa.',
+        17990,
+        0,
+        'assets/images/dress.jpg',
+        0,
+        'Off-white',
+    ],
+    [
+        'Conjunto Afeto',
+        'Conjuntos',
+        'Peças que combinam entre si e com você. Produto demonstrativo; imagem ilustrativa.',
+        26990,
+        29990,
+        'assets/images/set-demo.png',
+        0,
+        'Areia',
+    ],
+    [
+        'Blusa Essencial',
+        'Blusas',
+        'O básico que deixa a rotina mais bonita. Produto demonstrativo; imagem ilustrativa.',
+        8990,
+        10990,
+        'assets/images/top-demo.png',
+        0,
+        'Off-white',
+    ],
+    [
+        'Vestido Noite',
+        'Vestidos',
+        'Para os encontros que merecem uma produção especial. Produto demonstrativo; imagem ilustrativa.',
+        23990,
+        0,
+        'assets/images/black-demo.png',
+        0,
+        'Preto',
+    ],
+];

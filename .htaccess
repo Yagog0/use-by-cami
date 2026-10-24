@@ -1,0 +1,9 @@
+# Regras públicas do Apache: impede listagem, bloqueia arquivos internos e diretórios de desenvolvimento. Depende de AllowOverride habilitado no servidor.
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "(^\.|\.(md|json|sql|cjs|log)$)">
+Require all denied
+</FilesMatch>
+<If "%{REQUEST_URI} =~ m#/(node_modules|test-results|playwright-report|docs|\.git)(/|$)#">
+Require all denied
+</If>

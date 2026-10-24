@@ -1,0 +1,1051 @@
+/* Extensões de catálogo, conta, histórico e autenticação da sacola. Carrega depois de style.css. Classes correspondem aos fragmentos app/views e ao HTML gerado por account/catalog/checkout-auth/password-change.js. */
+/* Caminho de navegação e apresentação do catálogo. */
+.breadcrumbs {
+    display: flex;
+    gap: 13px;
+    font-size: 11px;
+    color: #9b8070;
+    margin-bottom: 28px;
+}
+.breadcrumbs a:hover {
+    color: #632a36;
+}
+.catalog-page {
+    padding-top: 28px;
+}
+.catalog-page .section-heading h1,
+.account-heading h1 {
+    font-size: 48px;
+    color: #5b2531;
+    margin: 13px 0;
+}
+.catalog-page h1 em,
+.account-heading h1 em {
+    color: #97755f;
+}
+.catalog-intro {
+    font-size: 13px;
+    color: #927967;
+}
+.catalog-page #view-all {
+    display: none;
+}
+/* Colunas de filtros/resultados; opções de preço, tamanho e cor. */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 238px minmax(0, 1fr);
+    gap: 38px;
+    margin-top: 35px;
+}
+.catalog-sidebar details {
+    border: 1px solid #e6dace;
+    background: #f9f4ee;
+    padding: 22px;
+}
+.catalog-sidebar summary {
+    font: 21px Georgia;
+    color: #653340;
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 25px;
+}
+.catalog-sidebar summary::-webkit-details-marker {
+    display: none;
+}
+.catalog-sidebar summary span {
+    display: none;
+}
+#catalog-filters .form-field {
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+#catalog-filters input,
+#catalog-filters select {
+    width: 100%;
+    min-width: 0;
+    font-size: 12px;
+    padding: 11px 9px;
+}
+.filter-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.price-filter {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.price-filter legend {
+    padding: 0;
+    margin: 0 0 10px;
+    font-size: 11px;
+}
+.price-filter .form-field {
+    font-size: 10px !important;
+}
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    margin: 13px 0;
+}
+.filter-check input {
+    width: 15px !important;
+    accent-color: #642b38;
+}
+.catalog-sidebar .button {
+    width: 100%;
+    padding: 12px 10px;
+}
+.reset-filters {
+    display: block;
+    margin: 14px auto 0;
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    font-size: 11px;
+    color: #97745e;
+}
+.filter-help {
+    padding: 28px 17px;
+    text-align: center;
+    color: #917460;
+}
+.filter-help > span {
+    font: 32px Georgia;
+    color: #af8665;
+}
+.filter-help h3 {
+    font: 19px Georgia;
+    margin: 12px 0;
+}
+.filter-help p {
+    font-size: 11px;
+    line-height: 1.8;
+}
+.filter-help button {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #b89c83;
+    padding: 7px 0;
+}
+.catalog-results {
+    min-width: 0;
+}
+.catalog-results .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 18px;
+}
+.catalog-results .catalog-toolbar {
+    margin: 0 0 20px;
+    min-height: 32px;
+}
+.catalog-results #result-count {
+    margin: 0;
+    font-size: 11px;
+    color: #9b7e68;
+}
+.catalog-results .sort-label {
+    display: block;
+}
+.catalog-results .catalog-message {
+    font-size: 12px;
+    background: #f8f0e8;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    overflow-wrap: anywhere;
+}
+.catalog-results .empty-state {
+    padding: 50px 20px;
+}
+/* Área da cliente: título, apresentação e entradas de login/cadastro. */
+.account-page {
+    padding-top: 28px;
+    padding-bottom: 70px;
+    min-height: 60vh;
+}
+.account-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.account-heading > div > p {
+    font-size: 13px;
+    color: #91755f;
+}
+.account-flower {
+    font: 80px Georgia;
+    color: #c7aa8b;
+    padding-right: 25px;
+}
+.customer-auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #e6dace;
+    background: #fffdfb;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.auth-story {
+    background: #f0e5d9;
+    padding: 55px 45px;
+}
+.auth-story h2 {
+    margin: 24px 0;
+    font-size: 36px;
+    color: #5b2d35;
+}
+.auth-story p,
+.auth-story li {
+    color: #92765f;
+    font-size: 12px;
+    line-height: 1.9;
+}
+.auth-story ul {
+    padding: 0;
+    list-style: none;
+    margin: 28px 0;
+}
+.auth-story li {
+    border-bottom: 1px solid #decebd;
+    padding: 10px 0;
+}
+.auth-story li:before {
+    content: '✓';
+    margin-right: 13px;
+    color: #9b7854;
+}
+.customer-auth-card {
+    padding: 35px 38px;
+}
+/* Seletores de login/cadastro e estados de seleção. */
+.account-auth-tabs {
+    display: flex;
+    border-bottom: 1px solid #e8dace;
+    margin-bottom: 28px;
+}
+.account-auth-tabs button {
+    flex: 1;
+    padding: 12px 4px;
+    background: none;
+    border: 0;
+    font-size: 12px;
+    color: #a38a74;
+    border-bottom: 2px solid transparent;
+}
+.account-auth-tabs button.selected {
+    border-color: #662e3a;
+    color: #662e3a;
+}
+.customer-auth-card h2 {
+    font-size: 28px;
+    margin-bottom: 9px;
+}
+.customer-auth-card p {
+    font-size: 12px;
+    color: #92755d;
+    line-height: 1.8;
+}
+.customer-auth-card .form-field {
+    font-size: 12px;
+    margin-top: 18px;
+}
+.customer-auth-card input {
+    font-size: 14px;
+}
+.customer-auth-card .button {
+    width: 100%;
+    margin-top: 10px;
+}
+.auth-forgot {
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    color: #9b755b;
+    font-size: 11px;
+    display: block;
+    margin: 18px auto 0;
+}
+/* Menu lateral e conteúdo autenticado da conta. */
+.customer-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 30px;
+}
+.customer-sidebar {
+    align-self: start;
+    border: 1px solid #e6dace;
+    background: #f8f1e9;
+    padding: 24px 18px;
+}
+.customer-welcome {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e3d3c3;
+}
+.customer-welcome > span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e8d7c5;
+    color: #69353c;
+    display: grid;
+    place-items: center;
+    font: 24px Georgia;
+    flex-shrink: 0;
+}
+.customer-welcome p {
+    font-size: 12px;
+    margin: 0;
+}
+.customer-welcome strong {
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+.customer-welcome small {
+    display: block;
+    font-size: 9px;
+    color: #aa8c73;
+    margin-top: 5px;
+}
+.customer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0;
+}
+.customer-nav button,
+.customer-nav a {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    background: none;
+    border: 0;
+    padding: 13px 11px;
+    color: #97755c;
+    font-size: 11px;
+}
+.customer-nav .selected {
+    background: #622b38;
+    color: #fffaf5;
+}
+.customer-nav #customer-logout {
+    border-top: 1px solid #e3d3c3;
+    margin-top: 9px;
+    padding-top: 19px;
+}
+.account-assistance {
+    font-size: 10px;
+    color: #a78c75;
+    padding: 8px 11px 0;
+}
+.account-assistance button {
+    display: block;
+    font-size: 11px;
+    background: none;
+    border: 0;
+    padding: 8px 0;
+    color: #795140;
+}
+.customer-main {
+    min-width: 0;
+}
+.customer-panel {
+    padding: 28px;
+    border: 1px solid #e6dace;
+    background: #fffdfb;
+    margin-bottom: 20px;
+}
+.customer-panel h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.customer-panel > p {
+    font-size: 12px;
+    color: #957b65;
+    line-height: 1.8;
+}
+.customer-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+.customer-panel-head h2 {
+    margin: 0;
+}
+.customer-panel-head p {
+    font-size: 11px;
+    color: #a38870;
+    margin: 6px 0 0;
+}
+.customer-panel-head button {
+    font-size: 11px;
+    background: none;
+    border: 1px solid #dbc8b5;
+    padding: 9px 13px;
+}
+.order-tools {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.order-tools select {
+    font-size: 11px;
+}
+.order-tools small {
+    color: #a4876b;
+    font-size: 10px;
+}
+/* Resumo visual de cada compra no histórico. */
+.customer-order-card {
+    border: 1px solid #e5d6c7;
+    margin: 18px 0;
+    background: #fffdfb;
+}
+.customer-order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 17px 19px;
+    background: #f9f3ed;
+}
+.customer-order-top strong {
+    font-size: 12px;
+    color: #6c3640;
+    font-weight: 500;
+}
+.customer-order-top small {
+    display: block;
+    font-size: 10px;
+    color: #ac8e73;
+    margin-top: 4px;
+}
+.order-badge {
+    padding: 5px 9px;
+    font-size: 10px;
+    background: #f4e7d2;
+    color: #997541;
+    height: fit-content;
+    white-space: nowrap;
+    align-self: center;
+}
+.order-badge.confirmed {
+    background: #e8ede0;
+    color: #6c7a4d;
+}
+.order-badge.shipped {
+    background: #e7ebee;
+    color: #6c7a8a;
+}
+.order-badge.delivered {
+    background: #e3eee3;
+    color: #537952;
+}
+.order-badge.cancelled {
+    background: #f3e1df;
+    color: #ae6c63;
+}
+.customer-order-body {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+}
+.order-thumbs {
+    display: flex;
+    gap: 6px;
+}
+.order-thumbs img {
+    width: 49px;
+    height: 65px;
+    object-fit: cover;
+}
+.customer-order-body p {
+    font-size: 11px;
+    color: #967658;
+    margin: 0;
+    flex: 1;
+}
+.customer-order-body strong {
+    font-size: 14px;
+    color: #6a3540;
+    display: block;
+    margin-top: 7px;
+}
+.customer-order-body .button {
+    font-size: 10px;
+    padding: 11px 16px;
+    min-height: 39px;
+    white-space: nowrap;
+}
+.account-empty {
+    text-align: center;
+    padding: 45px 10px;
+}
+.account-empty > span {
+    font: 38px Georgia;
+    color: #b7956f;
+}
+.account-empty h3 {
+    font: 27px Georgia;
+    margin: 18px 0 12px;
+}
+.account-empty p {
+    font-size: 12px;
+    color: #9c8067;
+    margin: 0 0 23px;
+}
+/* Formulários de perfil, senha e vínculo; campos e mensagens de apoio. */
+.customer-form {
+    max-width: 590px;
+    margin-top: 25px;
+}
+.customer-form .form-field {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.customer-form input,
+.customer-form textarea {
+    font-size: 14px;
+}
+.customer-form small {
+    color: #a18670;
+    font-size: 10px;
+}
+.customer-form .button {
+    margin-top: 10px;
+}
+.customer-form .readonly-value {
+    padding: 12px;
+    background: #f6efe7;
+    border: 1px solid #e4d7c9;
+    color: #9a7d65;
+    overflow-wrap: anywhere;
+}
+.data-notice {
+    padding: 17px 20px;
+    background: #f6eee4;
+    margin-top: 27px;
+    font-size: 11px;
+    color: #a0856b;
+    line-height: 1.8;
+}
+.data-notice a {
+    display: inline-block;
+    color: #693d3b;
+    border-bottom: 1px solid #b99474;
+    margin-top: 7px;
+}
+/* Detalhes de pedido: etapas, itens, endereço e rastreio. */
+.customer-order-dialog {
+    width: 790px;
+    padding: 36px;
+}
+.customer-order-dialog h2 {
+    font-size: 29px;
+    margin: 9px 0 15px;
+}
+.order-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+    list-style: none;
+    margin: 30px 0;
+    gap: 10px;
+}
+.order-timeline li {
+    font-size: 10px;
+    color: #ac9682;
+    border-top: 2px solid #e5dace;
+    padding: 12px 0 0;
+    line-height: 1.7;
+}
+.order-timeline li.done {
+    border-color: #956f4f;
+    color: #754a3e;
+}
+.order-timeline li.current {
+    border-color: #6a2f3c;
+    color: #6a2f3c;
+    font-weight: 600;
+}
+.order-timeline small {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    color: #aa8f76;
+}
+.order-cancelled {
+    background: #f7e8e3;
+    color: #9e6a5c;
+    padding: 14px;
+    font-size: 12px;
+}
+.order-detail-items {
+    border-top: 1px solid #e9dccf;
+    margin-top: 22px;
+}
+.order-detail-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid #e9dccf;
+    padding: 15px 0;
+}
+.order-detail-item img {
+    width: 55px;
+    height: 72px;
+    object-fit: cover;
+}
+.order-detail-item > div {
+    flex: 1;
+    font-size: 12px;
+}
+.order-detail-item small {
+    display: block;
+    color: #a2846b;
+    margin-top: 6px;
+}
+.order-detail-item > strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+.order-address {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 25px 0;
+}
+.order-address h3 {
+    font: 20px Georgia;
+    margin: 0 0 12px;
+}
+.order-address p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    color: #9c7e64;
+    line-height: 1.8;
+    margin: 0;
+}
+.order-address a {
+    font-size: 12px;
+    color: #662f3b;
+    border-bottom: 1px solid #cdb298;
+    display: inline-block;
+    margin-top: 12px;
+}
+.order-address code {
+    display: block;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+}
+.customer-order-dialog .cart-note {
+    margin-top: 15px;
+}
+/* Navegação entre páginas do histórico. */
+.order-pagination {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    margin-top: 25px;
+}
+.order-pagination button {
+    background: none;
+    border: 1px solid #dbc8b5;
+    padding: 10px;
+    color: #84644d;
+}
+/* Estilos legados de comprovante/vínculo; não são o código de recuperação de senha removido. */
+.receipt-access {
+    margin: 22px 0;
+    padding: 18px;
+    background: #f6ebde;
+    border: 1px solid #e2cdb4;
+    text-align: left;
+}
+.receipt-access label {
+    font-size: 11px;
+}
+.receipt-access input {
+    width: 100%;
+    margin: 10px 0;
+    font: 11px monospace;
+    user-select: all;
+}
+.receipt-access p {
+    font-size: 11px;
+    line-height: 1.8;
+}
+.receipt-access .button {
+    margin-bottom: 0;
+}
+/* Identificação e formulários de acesso dentro da sacola. */
+.checkout-account {
+    padding: 13px;
+    background: #f6ede3;
+    font-size: 11px;
+    color: #99795e;
+    margin-bottom: 20px;
+}
+.checkout-account a {
+    color: #6c2f3c;
+    text-decoration: underline;
+}
+.catalog-page #filter-error:empty {
+    display: none;
+}
+.checkout-signin-intro {
+    font-size: 12px;
+    color: #8f735e;
+    line-height: 1.8;
+}
+.checkout-signin .account-auth-tabs {
+    margin: 20px 0 24px;
+}
+.checkout-signin .account-auth-tabs button {
+    font-size: 12px;
+    padding: 12px 6px;
+}
+.checkout-signin .auth-forgot {
+    text-align: center;
+}
+.checkout-signin input {
+    font-size: 16px;
+}
+.checkout-signin small {
+    font-size: 10px;
+    color: #9b806b;
+}
+.customer-layout > * {
+    min-width: 0;
+}
+/* Até 1050px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 1050px) {
+    .catalog-layout {
+        grid-template-columns: 215px minmax(0, 1fr);
+        gap: 24px;
+    }
+    .catalog-results .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .header-inner {
+        gap: 10px;
+    }
+    .header-actions {
+        gap: 10px;
+    }
+    .auth-story {
+        padding: 40px 30px;
+    }
+    .customer-auth-card {
+        padding: 30px;
+    }
+    .customer-layout {
+        grid-template-columns: 205px minmax(0, 1fr);
+        gap: 20px;
+    }
+    .customer-panel {
+        padding: 22px;
+    }
+    .customer-order-body {
+        flex-wrap: wrap;
+    }
+}
+/* Até 800px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 800px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+        margin-top: 25px;
+    }
+    .catalog-sidebar details {
+        padding: 20px;
+    }
+    .catalog-sidebar summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+    .catalog-sidebar details[open] summary {
+        margin-bottom: 20px;
+    }
+    .catalog-sidebar summary span {
+        display: block;
+        font: 11px Arial;
+        color: #9f7a5b;
+    }
+    .catalog-sidebar form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+    }
+    .catalog-sidebar .price-filter {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .catalog-sidebar #filter-error {
+        grid-column: 1/-1;
+    }
+    .catalog-sidebar .filter-check {
+        align-self: start;
+    }
+    .catalog-sidebar .filter-help {
+        display: none;
+    }
+    .catalog-sidebar .button {
+        grid-column: 1;
+    }
+    .catalog-sidebar .reset-filters {
+        margin-top: 0;
+    }
+    .catalog-results .catalog-toolbar {
+        align-items: center;
+    }
+    .catalog-page .section-heading h1,
+    .account-heading h1 {
+        font-size: 39px;
+    }
+    .customer-auth {
+        grid-template-columns: 1fr;
+    }
+    .auth-story {
+        display: none;
+    }
+    .customer-auth-card {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+        padding: 35px;
+    }
+    .customer-layout {
+        grid-template-columns: 1fr;
+    }
+    .customer-sidebar {
+        padding: 20px;
+    }
+    .customer-welcome {
+        padding-bottom: 15px;
+    }
+    .customer-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 7px;
+        padding: 15px 0 0;
+    }
+    .customer-nav button,
+    .customer-nav a {
+        white-space: nowrap;
+        gap: 15px;
+    }
+    .customer-nav #customer-logout {
+        border: 0;
+        margin: 0;
+        padding: 13px 11px;
+    }
+    .account-assistance {
+        display: none;
+    }
+    .customer-order-body {
+        flex-wrap: nowrap;
+    }
+    .account-heading {
+        margin-bottom: 26px;
+    }
+    .account-flower {
+        font-size: 60px;
+    }
+}
+/* Até 520px: adapta os componentes acima; regras mais estreitas abaixo têm prioridade na cascata. */
+@media (max-width: 520px) {
+    .header-inner {
+        gap: 5px;
+    }
+    .header-actions {
+        gap: 9px;
+    }
+    .wordmark > span:last-child {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+    }
+    .wordmark small {
+        letter-spacing: 1.4px;
+    }
+    .catalog-page {
+        padding-top: 20px;
+    }
+    .breadcrumbs {
+        font-size: 10px;
+        margin-bottom: 22px;
+    }
+    .catalog-page .section-heading h1,
+    .account-heading h1 {
+        font-size: 33px;
+        line-height: 1.2;
+    }
+    .catalog-intro,
+    .account-heading > div > p {
+        font-size: 12px;
+    }
+    .catalog-sidebar form {
+        display: block;
+    }
+    .catalog-sidebar .price-filter {
+        display: block;
+    }
+    .catalog-sidebar .reset-filters {
+        margin-top: 15px;
+    }
+    .catalog-results .sort-label select {
+        font-size: 10px;
+        padding-right: 8px;
+        max-width: 135px;
+    }
+    .catalog-results #result-count {
+        font-size: 10px;
+    }
+    .catalog-results .product-grid {
+        gap: 26px 14px;
+    }
+    .account-page {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    .account-heading h1 {
+        font-size: 35px;
+    }
+    .account-heading .eyebrow {
+        font-size: 8px;
+    }
+    .account-flower {
+        display: none;
+    }
+    .customer-auth-card {
+        padding: 25px 20px;
+    }
+    .customer-auth-card h2 {
+        font-size: 26px;
+    }
+    .customer-auth-card input,
+    .customer-form input,
+    .customer-form textarea {
+        font-size: 16px;
+    }
+    .customer-panel {
+        padding: 20px 16px;
+    }
+    .customer-panel h2 {
+        font-size: 26px;
+    }
+    .customer-panel-head {
+        gap: 9px;
+    }
+    .customer-panel-head button {
+        padding: 9px;
+        font-size: 10px;
+    }
+    .customer-panel-head p {
+        font-size: 10px;
+    }
+    .order-tools {
+        gap: 8px;
+    }
+    .order-tools select {
+        max-width: 180px;
+        font-size: 10px;
+        padding: 10px 7px;
+    }
+    .order-tools small {
+        font-size: 8px;
+    }
+    .customer-order-top {
+        padding: 13px 12px;
+        gap: 7px;
+    }
+    .customer-order-top strong {
+        font-size: 10px;
+    }
+    .customer-order-top small {
+        font-size: 9px;
+    }
+    .order-badge {
+        font-size: 8px;
+        padding: 5px 6px;
+    }
+    .customer-order-body {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 12px;
+    }
+    .order-thumbs img {
+        width: 42px;
+        height: 56px;
+    }
+    .customer-order-body .button {
+        width: 100%;
+    }
+    .customer-order-dialog {
+        padding: 30px 20px;
+    }
+    .customer-order-dialog h2 {
+        font-size: 24px;
+    }
+    .order-timeline {
+        gap: 6px;
+    }
+    .order-timeline li {
+        font-size: 9px;
+    }
+    .order-timeline small {
+        font-size: 8px;
+    }
+    .order-address {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .order-detail-item > div {
+        font-size: 10px;
+    }
+    .order-detail-item > strong {
+        font-size: 11px;
+    }
+    .order-detail-item {
+        gap: 10px;
+    }
+    .order-detail-item img {
+        width: 45px;
+        height: 60px;
+    }
+    .catalog-results .empty-state {
+        padding: 35px 10px;
+    }
+    .catalog-sidebar input,
+    .catalog-sidebar select {
+        font-size: 16px !important;
+    }
+}
+/* Troca obrigatória: botão principal ocupa a largura do formulário e saída fica separada. */
+[data-required-password] .button {
+    width: 100%;
+}
+[data-password-logout] {
+    display: block;
+    border: 0;
+    background: transparent;
+    color: #602936;
+    margin: 16px auto 0;
+    padding: 8px;
+    text-decoration: underline;
+}

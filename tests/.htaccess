@@ -1,0 +1,2 @@
+# Testes são executados por CLI/Playwright, nunca disponibilizados pelo Apache.
+Require all denied

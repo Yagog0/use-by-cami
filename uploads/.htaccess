@@ -1,0 +1,5 @@
+# Fotos enviadas pela loja: impede listagem e acesso às extensões executáveis/ativas indicadas abaixo.
+Options -Indexes -ExecCGI
+<FilesMatch "\.(php|phtml|phar|cgi|pl|html|svg)$">
+Require all denied
+</FilesMatch>
